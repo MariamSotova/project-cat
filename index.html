@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/base/b_normalize.css">
+    <link rel="stylesheet" href="assets/app.css">
+    <link rel="stylesheet" href="assets/base/b_font_face.css">
+  </head>
+  <body>
+    <header class="page-header" id="catalog">
+      <div class="container">
+        <div class="page-header__header-menu">
+            <nav class="menu-nav">
+              <a class="page__logo" href="index.html">
+                <svg class="page__logo-svg" width="78" height="52" viewBox="0 0 78 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M63.0559 15.8815L54.2119 15.8947L27.8012 40.7922H10.0354V23.4593L34.2348 0.848633L17.993 0.899213L0 17.6625V51.1511H34.0283L63.0418 23.5687L63.0559 15.8815Z" fill="white"/>
+                  <path d="M43.9721 0.848633L14.9586 28.4318L14.9453 36.1182L23.7884 36.1049L50.1991 11.2075H67.9649V28.5404L43.7656 51.1511L60.0074 51.1013L78.0004 34.338V0.848633H43.9721Z" fill="white"/>
+                  </svg>
+              </a>
+              <ul class="menu-nav__list">
+                <li class="menu-nav__item"><a class="menu-nav__link" href="#">Main</a>
+                </li>
+                <li class="menu-nav__item"><a class="menu-nav__link" href="#">Gallery</a>
+                </li>
+                <li class="menu-nav__item"><a class="menu-nav__link" href="#">News</a>
+                </li>
+                <li class="menu-nav__item"><a class="menu-nav__link" href="#">Profile</a></li>
+              </ul>
+            </nav>
+          <div class="phone-wrp">
+            <a class="phone-tel" href="tel:+544 3490 00000">+544 3490 00000</a>
+            <p class="phone-text">Звони скорее!</p>
+          </div>
+        </div>
+        <div class="page-header__header-search">
+          <p class="search-text__text">
+            Найдено 349 котов
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="container">
+        <div class="wrapper__sort">
+          <ul class="sort__list">
+            <li class="sort__item sort__item--header">
+              Сортировать по:
+            </li>
+            <li class="sort__item">Цене
+              <select name="price" onchange="sortByPrice(this.options[this.selectedIndex].value)">
+                <option disabled selected value> -- Сортировать по цене -- </option>
+                <option value="asc">Сначала дешевле</option>
+                <option value="desc">Сначала дороже</option>
+              </select>
+            </li>
+            <li class="sort__item">Возрасту
+              <select name="age" onchange="sortByAge(this.options[this.selectedIndex].value)">
+                <option disabled selected value> -- Сортировать по возрасту -- </option>
+                <option value="asc">Сначала моложе</option>
+                <option value="desc">Сначала старше</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <div class="wrapper__catalog">
+          <div class="catalog__cat" data-age="2" data-price="30000"> 
+            <div class="img__wrp">
+              <img src="assets/img/jpg/cat.jpg" alt="фото кота">
+              <svg  class="heart__svg" width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z" fill="white"/>
+                </svg>
+              <svg class="sale__svg" width="78" height="39" viewBox="0 0 78 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="78" height="39" rx="10" fill="#E62D2D"/>
+                <path d="M18.96 21.16H23.152V20.168H18.96V21.16ZM34.5864 21.032H32.3464V18.44H31.2264V21.032H26.3624L32.0904 13.8H30.8104L24.8744 21.224V22.056H31.1944V25H32.3464V22.056H34.5864V21.032ZM40.1085 25.096C42.7005 25.096 44.5885 22.968 44.5885 19.4C44.5885 15.832 42.7005 13.704 40.1085 13.704C37.5165 13.704 35.6445 15.832 35.6445 19.4C35.6445 22.968 37.5165 25.096 40.1085 25.096ZM40.1085 24.04C38.1565 24.04 36.8125 22.392 36.8125 19.4C36.8125 16.408 38.1565 14.76 40.1085 14.76C42.0605 14.76 43.4045 16.408 43.4045 19.4C43.4045 22.392 42.0605 24.04 40.1085 24.04ZM48.6063 19.8C50.0943 19.8 51.1343 18.6 51.1343 16.76C51.1343 14.92 50.0943 13.72 48.6063 13.72C47.1023 13.72 46.0783 14.936 46.0783 16.76C46.0783 18.584 47.1023 19.8 48.6063 19.8ZM47.7423 25H48.6863L56.3343 13.8H55.3903L47.7423 25ZM48.6063 19.08C47.5503 19.08 46.8783 18.2 46.8783 16.76C46.8783 15.32 47.5503 14.44 48.6063 14.44C49.6463 14.44 50.3343 15.304 50.3343 16.76C50.3343 18.216 49.6463 19.08 48.6063 19.08ZM55.4703 25.08C56.9743 25.08 57.9983 23.864 57.9983 22.04C57.9983 20.216 56.9743 19 55.4703 19C53.9823 19 52.9423 20.216 52.9423 22.04C52.9423 23.864 53.9823 25.08 55.4703 25.08ZM55.4703 24.36C54.4303 24.36 53.7423 23.496 53.7423 22.04C53.7423 20.584 54.4303 19.72 55.4703 19.72C56.5263 19.72 57.1983 20.6 57.1983 22.04C57.1983 23.48 56.5263 24.36 55.4703 24.36Z" fill="white"/>
+                </svg></div>
+            <div class="info__wrp">
+              <h4 class="info__header">Кот полосатый</h4>
+              <ul class="wrapper__list">
+                <li class="wrapper__item wrapper__item--color">коричневый <br>окрас</li>
+                <li class="wrapper__item"> 2 мес. <span class="age__text"><br>Возраст</span></li>
+                <li class="wrapper__item">4 <span class="age__text"><br>Кол-во лап</span></li>
+              </ul>
+              <p class="info__text">30 000 руб.</p>
+            </div>
+            <div class="button__wrp">
+              <button class="button" type="submit" tabindex="0">Купить</button>
+            </div>
+          </div>
+          <div class="catalog__cat" data-age="5" data-price="40000"> 
+            <div class="img__wrp"><img src="assets/img/jpg/cattwo.jpg" alt="фото кота">
+              <svg  class="heart__svg" width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z" fill="white"/>
+                </svg>
+                  </div>
+            <div class="info__wrp">
+              <h4 class="info__header">Кот полосатый</h4>
+              <ul class="wrapper__list">
+                <li class="wrapper__item wrapper__item--color">коричневый <br>окрас</li>
+                <li class="wrapper__item"> 5 мес. <span class="age__text"><br>Возраст</span></li>
+                <li class="wrapper__item">4 <span class="age__text"><br>Кол-во лап</span></li>
+              </ul>
+              <p class="info__text">40 000 руб.</p>
+            </div>
+            <div class="button__wrp">
+              <button class="button" type="submit" tabindex="0" disabled>Купить</button>
+            </div>
+          </div>
+          <div class="catalog__cat" data-age="120" data-price="20000"> 
+            <div class="img__wrp"><img src="assets/img/jpg/catthree.jpg" alt="фото кота"><svg  class="heart__svg" width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z" fill="white"/>
+              </svg></div>
+            <div class="info__wrp">
+              <h4 class="info__header">Кот полосатый</h4>
+              <ul class="wrapper__list">
+                <li class="wrapper__item wrapper__item--color">коричневый <br>окрас</li>
+                <li class="wrapper__item"> 10 лет <span class="age__text"><br>Возраст</span></li>
+                <li class="wrapper__item">4 <span class="age__text"><br>Кол-во лап</span></li>
+              </ul>
+              <p class="info__text">20 000 руб.</p>
+            </div>
+            <div class="button__wrp">
+              <button class="button" type="submit" tabindex="0">Купить</button>
+            </div>
+          </div>
+          <div class="catalog__cat" data-age="12" data-price="25000"> 
+            <div class="img__wrp"><img src="assets/img/jpg/cat.jpg" alt="фото кота"><svg  class="heart__svg" width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z" fill="white"/>
+              </svg></div>
+            <div class="info__wrp">
+              <h4 class="info__header">Кот полосатый</h4>
+              <ul class="wrapper__list">
+                <li class="wrapper__item wrapper__item--color">коричневый <br>окрас</li>
+                <li class="wrapper__item"> 12 мес. <span class="age__text"><br>Возраст</span></li>
+                <li class="wrapper__item">4 <span class="age__text"><br>Кол-во лап</span></li>
+              </ul>
+              <p class="info__text">25 000 руб.</p>
+            </div>
+            <div class="button__wrp">
+              <button class="button" type="submit" tabindex="0">Купить</button>
+            </div>
+          </div>
+          <div class="catalog__cat" data-age="3" data-price="30000"> 
+            <div class="img__wrp"><img src="assets/img/jpg/catthree.jpg" alt="фото кота"><svg  class="heart__svg" width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z" fill="white"/>
+              </svg><svg class="sale__svg" width="78" height="39" viewBox="0 0 78 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="78" height="39" rx="10" fill="#E62D2D"/>
+                <path d="M18.96 21.16H23.152V20.168H18.96V21.16ZM34.5864 21.032H32.3464V18.44H31.2264V21.032H26.3624L32.0904 13.8H30.8104L24.8744 21.224V22.056H31.1944V25H32.3464V22.056H34.5864V21.032ZM40.1085 25.096C42.7005 25.096 44.5885 22.968 44.5885 19.4C44.5885 15.832 42.7005 13.704 40.1085 13.704C37.5165 13.704 35.6445 15.832 35.6445 19.4C35.6445 22.968 37.5165 25.096 40.1085 25.096ZM40.1085 24.04C38.1565 24.04 36.8125 22.392 36.8125 19.4C36.8125 16.408 38.1565 14.76 40.1085 14.76C42.0605 14.76 43.4045 16.408 43.4045 19.4C43.4045 22.392 42.0605 24.04 40.1085 24.04ZM48.6063 19.8C50.0943 19.8 51.1343 18.6 51.1343 16.76C51.1343 14.92 50.0943 13.72 48.6063 13.72C47.1023 13.72 46.0783 14.936 46.0783 16.76C46.0783 18.584 47.1023 19.8 48.6063 19.8ZM47.7423 25H48.6863L56.3343 13.8H55.3903L47.7423 25ZM48.6063 19.08C47.5503 19.08 46.8783 18.2 46.8783 16.76C46.8783 15.32 47.5503 14.44 48.6063 14.44C49.6463 14.44 50.3343 15.304 50.3343 16.76C50.3343 18.216 49.6463 19.08 48.6063 19.08ZM55.4703 25.08C56.9743 25.08 57.9983 23.864 57.9983 22.04C57.9983 20.216 56.9743 19 55.4703 19C53.9823 19 52.9423 20.216 52.9423 22.04C52.9423 23.864 53.9823 25.08 55.4703 25.08ZM55.4703 24.36C54.4303 24.36 53.7423 23.496 53.7423 22.04C53.7423 20.584 54.4303 19.72 55.4703 19.72C56.5263 19.72 57.1983 20.6 57.1983 22.04C57.1983 23.48 56.5263 24.36 55.4703 24.36Z" fill="white"/>
+                </svg>
+                </div>
+            <div class="info__wrp">
+              <h4 class="info__header">Кот полосатый</h4>
+              <ul class="wrapper__list">
+                <li class="wrapper__item wrapper__item--color">коричневый <br>окрас</li>
+                <li class="wrapper__item"> 3 мес. <span class="age__text"><br>Возраст</span></li>
+                <li class="wrapper__item">4 <span class="age__text"><br>Кол-во лап</span></li>
+              </ul>
+              <p class="info__text">30 000 руб.</p>
+            </div>
+            <div class="button__wrp">
+              <button class="button" type="submit" tabindex="0">Купить</button>
+            </div>
+          </div>
+          <div class="catalog__cat" data-age="4" data-price="10000"> 
+            <div class="img__wrp"><img src="assets/img/jpg/cattwo.jpg" alt="фото кота"><svg  class="heart__svg" width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z" fill="white"/>
+              </svg></div>
+            <div class="info__wrp">
+              <h4 class="info__header">Кот полосатый</h4>
+              <ul class="wrapper__list">
+                <li class="wrapper__item wrapper__item--color">коричневый <br>окрас</li>
+                <li class="wrapper__item"> 4 мес. <span class="age__text"><br>Возраст</span></li>
+                <li class="wrapper__item">4 <span class="age__text"><br>Кол-во лап</span></li>
+              </ul>
+              <p class="info__text">10 000 руб.</p>
+            </div>
+            <div class="button__wrp">
+              <button class="button" type="submit" tabindex="0" disabled>Купить</button>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper__more">
+            <button class="button__link" type="button" tabindex="1">Показать еще 20</button>
+        </div>
+      </section>
+    </main>
+    <footer class="page__footer">
+      <div class="container">
+        <div class="wrp__footer">
+          <div class="footer__social">
+            <b class="footer__title">
+              Успей купить!
+            </b>
+            <p class="footer__text">Подпишись и успей <br>словить все акции</p>
+          </div>
+          <div class="footer__subscribe">
+            <form class="form__subscribe" method="post" action="#">
+              <div class="wrp">
+                <input class="input__email" type="email" id="email-text" name="email" autocomplete="on" placeholder="Email" required>
+                <button class="subscribe__button" type="submit" tabindex="2">Подписаться</button>
+              </div>
+              <div>
+                <label for="spam-id" class="check">
+                  <input id="spam-id" class="check__input" type="checkbox" name="selfie" tabindex="0" checked>
+                  Подписаться на новости
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="scroll__wrp">
+      <button id="arrowTop" class="scroll-top" onclick="scrollMenu('#catalog')" hidden>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0)">
+        <path d="M8.29764 3.99939L0.287559 12.0096C0.102145 12.1949 -8.06437e-08 12.4422 -6.91167e-08 12.7059C-5.75898e-08 12.9696 0.102145 13.2169 0.287559 13.4022L0.87731 13.9921C1.2616 14.3759 1.88618 14.3759 2.26988 13.9921L8.99627 7.2657L15.7301 13.9996C15.9155 14.1848 16.1627 14.2871 16.4263 14.2871C16.6901 14.2871 16.9373 14.1848 17.1228 13.9995L17.7124 13.4097C17.8979 13.2242 18 12.9771 18 12.7134C18 12.4497 17.8979 12.2023 17.7124 12.0171L9.69504 3.99939C9.50904 3.81368 9.26071 3.71168 8.99671 3.71227C8.73169 3.71168 8.48349 3.81368 8.29764 3.99939Z" fill="white"/>
+        </g>
+        <defs>
+        <clipPath id="clip0">
+        <rect width="18" height="18" fill="white" transform="translate(0 18) rotate(-90)"/>
+        </clipPath>
+        </defs>
+        </svg>
+      </button>
+    </div>
+
+    <div class="notification">
+      <p class="notification__text"></p>
+    </div>
+    
+    <script src="assets/js/scroll.js"></script>
+    <script src="assets/js/sorter.js"></script>
+    <script src="assets/js/heart.js"></script>
+  </body>
+</html>
